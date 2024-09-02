@@ -4,8 +4,17 @@ import { ErrorRequestHandler } from "express";
 import { sendResponse } from "../utils/send-response";
 
 // create global error handle middleware
-const globalErrorHandleMiddleware: ErrorRequestHandler = (error, req, res, next) => {
-    sendResponse(res, { status: 400, message: error.message, stack: error.stack })
-}
+const globalErrorHandleMiddleware: ErrorRequestHandler = (
+  error,
+  req,
+  res,
+  next,
+) => {
+  sendResponse(res, {
+    status: 400,
+    message: error.message,
+    stack: error.stack,
+  });
+};
 
-export default globalErrorHandleMiddleware
+export default globalErrorHandleMiddleware;

@@ -3,8 +3,6 @@ import express, { Express, Request, Response } from "express";
 import globalErrorHandleMiddleware from "./app/middleware/global-error-handler";
 import mainRouter from "./app/router";
 
-
-
 // create app
 const app: Express = express();
 
@@ -13,7 +11,7 @@ app.use(
   cors({
     origin: ["http://localhost:5173", "https://sayel-portfolio.surge.sh"],
     credentials: true,
-  })
+  }),
 );
 
 // adding main roter to appRouter
@@ -25,6 +23,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // global error handler
-app.use(globalErrorHandleMiddleware)
+app.use(globalErrorHandleMiddleware);
 
 export default app;

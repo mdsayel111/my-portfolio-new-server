@@ -1,14 +1,18 @@
 import { RequestHandler } from "express";
 import catchAsync from "../../../HOF/catch-async";
-import Project from "./model";
 import { sendResponse } from "../../utils/send-response";
+import { getAllProjectService } from "./service";
 
 // create getAllProject controller
 export const getAllProject: RequestHandler = catchAsync(async (req, res) => {
-    // get data from DB
-    const data = await Project.find({})
-    // .sort({ $natural: -1 })
-    // .limit(6)
+  // get query params from req
+  const query = req.query
 
-    sendResponse(res, { status: 200, message: "Project retrive successfully!", data })
-})
+  const data = await getAllProjectService(query)
+
+  sendResponse(res, {
+    status: 200,
+    message: "Project retrive successfully!",
+    data,
+  });
+});
