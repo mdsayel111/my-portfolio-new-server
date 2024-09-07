@@ -10,8 +10,10 @@ const globalErrorHandleMiddleware: ErrorRequestHandler = (
   res,
   next,
 ) => {
+  console.log(error)
   sendResponse(res, {
     status: 400,
+    error: error,
     message: error.message,
     stack: error.stack,
   });

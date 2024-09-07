@@ -3,6 +3,7 @@ import { Router } from "express";
 
 export type TRouterObjects = { path: string; router: Router }[];
 
+// create TResponse type
 export type TResponse = {
   status: number;
   message: string;
@@ -10,3 +11,6 @@ export type TResponse = {
   error?: any;
   stack?: string;
 };
+
+// create TRole type
+export type TRole = "admin"

@@ -1,9 +1,10 @@
 import express from "express";
-import { getAllProject } from "./controller";
+import { getAllProject, getLeatestProjects } from "./controller";
 
-// create admin router
+// create project router
 const projectRouter = express.Router();
 
 projectRouter.get("/", getAllProject);
+projectRouter.get("/leatest-projects", getLeatestProjects);
 
 export default projectRouter;
