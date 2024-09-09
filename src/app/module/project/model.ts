@@ -17,7 +17,7 @@ const projectSchema = new Schema<TProject>(
     isLeatest: { type: Boolean, default: false },
     position: { type: Number, default: 0 },
   },
-  { collection: "Projects" },
+  { collection: "Projects", timestamps: true },
 );
 
 // create project model

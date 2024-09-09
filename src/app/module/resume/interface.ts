@@ -1,9 +1,9 @@
-// create resume type 
+// create resume type
 type TResume = {
-    _id: string;
-    resumeDownloadLink: string;
-    resumeImgLink: string;
-    resumeLink: string;
-}
+  _id: string;
+  resumeDownloadLink: string;
+  resumeImgLink: string;
+  resumeLink: string;
+};
 
-export default TResume
+export default TResume;

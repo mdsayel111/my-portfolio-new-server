@@ -1,10 +1,22 @@
 import express from "express";
-import { getAllProject, getLeatestProjects } from "./controller";
+import { createProject, deleteProject, getAllProject, getLeatestProjects, updateProject } from "./controller";
 
 // create project router
 const projectRouter = express.Router();
 
+// get all project route
 projectRouter.get("/", getAllProject);
+
+// get leatest project route
 projectRouter.get("/leatest-projects", getLeatestProjects);
+
+// create project route
+projectRouter.post("/", createProject)
+
+// update project route
+projectRouter.patch("/:id", updateProject)
+
+// delete project route
+projectRouter.delete("/:id", deleteProject)
 
 export default projectRouter;

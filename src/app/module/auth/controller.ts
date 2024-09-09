@@ -5,13 +5,13 @@ import { sendResponse } from "../../utils/send-response";
 
 // create getLoginUserInfo controller
 export const getLoginUserInfo: RequestHandler = catchAsync(async (req, res) => {
-    const data = []
+  const data = [];
 
-    sendResponse(res, {
-        status: 200,
-        message: "Project retrive successfully!",
-        data,
-    });
+  sendResponse(res, {
+    status: 200,
+    message: "Project retrive successfully!",
+    data,
+  });
 });
 
 // create getLeatestProjects controller

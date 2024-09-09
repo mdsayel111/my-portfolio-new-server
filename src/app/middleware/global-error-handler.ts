@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 import { ErrorRequestHandler } from "express";
@@ -10,7 +11,7 @@ const globalErrorHandleMiddleware: ErrorRequestHandler = (
   res,
   next,
 ) => {
-  console.log(error)
+  console.log(error);
   sendResponse(res, {
     status: 400,
     error: error,

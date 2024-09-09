@@ -13,4 +13,4 @@ export type TResponse = {
 };
 
 // create TRole type
-export type TRole = "admin"
+export type TRole = "admin";
