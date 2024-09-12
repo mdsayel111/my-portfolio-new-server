@@ -21,9 +21,9 @@ export class QueryBuilder {
       }
     });
 
-    this.queryModel.find(searchObj)
+    this.queryModel.find(searchObj);
 
-    return this.queryModel
+    return this.queryModel;
   }
 
   // create sort method for sort
@@ -40,6 +40,6 @@ export class QueryBuilder {
 
     this.queryModel.sort(sortObj);
 
-    return this.queryModel
+    return this.queryModel;
   }
 }

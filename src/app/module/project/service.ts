@@ -33,7 +33,10 @@ export const createProjectService = async (projectData: TProject) => {
 };
 
 // update projects service
-export const updateProjectService = async (id: string, projectData: TProject) => {
+export const updateProjectService = async (
+  id: string,
+  projectData: TProject,
+) => {
   // update data in DB
   const data = await Project.findByIdAndUpdate(id, projectData, { new: true });
 

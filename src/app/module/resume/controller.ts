@@ -16,7 +16,7 @@ export const getResume: RequestHandler = catchAsync(async (req, res) => {
 
 // create updateResume controller
 export const updateResume: RequestHandler = catchAsync(async (req, res) => {
-  const resumeData = req.body
+  const resumeData = req.body;
 
   const data = await updateResumeService(resumeData);
 

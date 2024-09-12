@@ -1,5 +1,11 @@
 import express from "express";
-import { createProject, deleteProject, getAllProject, getLeatestProjects, updateProject } from "./controller";
+import {
+  createProject,
+  deleteProject,
+  getAllProject,
+  getLeatestProjects,
+  updateProject,
+} from "./controller";
 
 // create project router
 const projectRouter = express.Router();
@@ -11,12 +17,12 @@ projectRouter.get("/", getAllProject);
 projectRouter.get("/leatest-projects", getLeatestProjects);
 
 // create project route
-projectRouter.post("/", createProject)
+projectRouter.post("/", createProject);
 
 // update project route
-projectRouter.patch("/:id", updateProject)
+projectRouter.patch("/:id", updateProject);
 
 // delete project route
-projectRouter.delete("/:id", deleteProject)
+projectRouter.delete("/:id", deleteProject);
 
 export default projectRouter;

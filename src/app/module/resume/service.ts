@@ -10,9 +10,9 @@ export const getResumeService = async () => {
 };
 
 // create update resume service
-export const updateResumeService = async ( resumeData: TResume) => {
+export const updateResumeService = async (resumeData: TResume) => {
   // get resume data from DB
-  const data = await Resume.findOneAndUpdate({}, resumeData, {new: true});
+  const data = await Resume.findOneAndUpdate({}, resumeData, { new: true });
 
   return data;
 };
