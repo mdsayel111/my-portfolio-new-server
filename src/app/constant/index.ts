@@ -1,11 +1,13 @@
 import authRouter from "../module/auth/route";
 import projectRouter from "../module/project/router";
 import resumeRouter from "../module/resume/router";
+import tokenRouter from "../module/token/router";
 import { TRouterObjects } from "../types";
 
 // create all router objects
 export const routerObjects: TRouterObjects = [
-  { path: "/project", router: projectRouter },
+  { path: "/projects", router: projectRouter },
   { path: "/auth", router: authRouter },
   { path: "/resume", router: resumeRouter },
+  { path: "/token", router: tokenRouter },
 ];
