@@ -9,6 +9,4 @@ export type TResume = {
 export type TAuthData = {
   email: string;
   password: string;
-}
-
-
+};

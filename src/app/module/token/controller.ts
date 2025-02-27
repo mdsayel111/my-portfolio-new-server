@@ -1,6 +1,5 @@
 import { RequestHandler } from "express";
 import catchAsync from "../../../HOF/catch-async";
-import { sendResponse } from "../../utils/send-response";
 import { getTokenService } from "./service";
 
 // create getToken controller
