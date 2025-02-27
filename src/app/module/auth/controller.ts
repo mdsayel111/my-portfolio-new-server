@@ -6,7 +6,7 @@ import { getLoginUserInfoService, loginService } from "./service";
 
 // create getLoginUserInfo controller
 export const getLoginUserInfo = catchAsync(async (req, res) => {
-  const { token } = req.cookies
+  const { token } = req.cookies;
 
   const data = await getLoginUserInfoService(token);
 
@@ -21,7 +21,7 @@ export const getLoginUserInfo = catchAsync(async (req, res) => {
 export const login = catchAsync(async (req, res) => {
   const userData = req.body;
 
-  const token = await loginService(userData)
+  const token = await loginService(userData);
 
   // if login service return token
   if (token) {
@@ -32,9 +32,9 @@ export const login = catchAsync(async (req, res) => {
         sameSite: "none",
         expires: new Date(Date.now() + config.cookieExpire),
       })
-      .send({ message: "Login successful" })
+      .send({ message: "Login successful" });
   }
 
   // otherwise
-  sendResponse(res, { status: 401, message: "Unathorize user!" })
+  sendResponse(res, { status: 401, message: "Unathorize user!" });
 });

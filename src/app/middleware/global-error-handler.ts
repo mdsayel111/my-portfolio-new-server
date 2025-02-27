@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-unused-vars */
 import { ErrorRequestHandler } from "express";
@@ -12,15 +11,14 @@ const globalErrorHandleMiddleware: ErrorRequestHandler = (
   res,
   next,
 ) => {
-
   const errorObj: TResponse = {
     status: 400,
     error: error,
     message: error.message,
-  }
+  };
 
   // if server not running in production, then send stack
-  errorObj.stack = process.env.NODE_ENV === "production" || error.stack
+  errorObj.stack = process.env.NODE_ENV === "production" || error.stack;
   sendResponse(res, errorObj);
 };
 

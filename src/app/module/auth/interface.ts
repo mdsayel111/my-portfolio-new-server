@@ -1,9 +1,9 @@
 //  create user interface
 type TUser = {
-    _id: string;
-    email: string;
-    password: string;
-    role: "admin"
-}
+  _id: string;
+  email: string;
+  password: string;
+  role: "admin";
+};
 
-export default TUser
+export default TUser;
