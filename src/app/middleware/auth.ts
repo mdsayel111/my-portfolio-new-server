@@ -12,8 +12,7 @@ const auth = () => {
     if (decoded) {
       const { email } = decoded;
       const userInfoFromDB = await User.findOne({ email });
-      if (userInfoFromDB?.role === "admin")
-        return next();
+      if (userInfoFromDB?.role === "admin") return next();
     }
 
     // otherwise send user details
