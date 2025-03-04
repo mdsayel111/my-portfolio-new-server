@@ -1,5 +1,6 @@
 import express from "express";
 import { getResume, updateResume } from "./controller";
+import auth from "../../middleware/auth";
 
 // create resume router
 const resumeRouter = express.Router();
@@ -8,6 +9,6 @@ const resumeRouter = express.Router();
 resumeRouter.get("/", getResume);
 
 // resume update route
-resumeRouter.patch("/", updateResume);
+resumeRouter.patch("/", auth(), updateResume);
 
 export default resumeRouter;
