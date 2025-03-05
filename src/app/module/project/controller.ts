@@ -29,7 +29,7 @@ export const getSingleProject: RequestHandler = catchAsync(async (req, res) => {
   // get query params from req
   const { id } = req.params;
 
-  const data = await getSingleProjectService(id)
+  const data = await getSingleProjectService(id);
   sendResponse(res, {
     status: 200,
     message: "Project retrieve successfully!",

@@ -13,7 +13,10 @@ const projectSchema = new Schema<TProject>(
     // gitLink: { type: String, required: [true, "Git is required!"] },
     // gitLink: { type: String, required: [true, "Git is required!"] },
     clientCodeLink: { type: String, required: [true, "Git is required!"] },
-    serverCodeLink: { type: String, required: [true, "Live link is required!"] },
+    serverCodeLink: {
+      type: String,
+      required: [true, "Live link is required!"],
+    },
     isActive: { type: Boolean, default: true },
     isVisible: { type: Boolean, default: true },
     isLeatest: { type: Boolean, default: false },
