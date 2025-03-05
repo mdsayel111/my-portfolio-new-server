@@ -19,6 +19,9 @@ projectRouter.get("/leatest-projects", getLeatestProjects);
 // create project route
 projectRouter.post("/", createProject);
 
+// get single project route
+projectRouter.get("/:id", updateProject);
+
 // update project route
 projectRouter.patch("/:id", updateProject);
 

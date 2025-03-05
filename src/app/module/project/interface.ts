@@ -3,10 +3,12 @@ export type TProject = {
   _id: string;
   projectName: string;
   liveLink: string;
-  gitLink: string;
+  // gitLink: string;
+  clientCodeLink: string;
+  serverCodeLink: string;
   imgLink: string;
   description: string;
-  isDeleted: boolean;
+  isActive: boolean;
   isVisible: boolean;
   isLeatest: boolean;
   position: number;

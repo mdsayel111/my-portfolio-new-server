@@ -1,8 +1,8 @@
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, { Express, Request, Response } from "express";
 import globalErrorHandleMiddleware from "./app/middleware/global-error-handler";
 import mainRouter from "./app/router";
-import cookieParser from "cookie-parser";
 
 // create app
 const app: Express = express();
@@ -20,6 +20,9 @@ app.use(cookieParser());
 
 // add json parser middleware
 app.use(express.json());
+
+// removeFields(["gitLink", "image"])
+// addFields({clientCodeLink: "", serverCodeLink: ""})
 
 // adding main roter to appRouter
 app.use("/api", mainRouter);

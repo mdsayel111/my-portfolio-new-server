@@ -6,6 +6,7 @@ import {
   deleteProjectService,
   getAllProjectService,
   getLeatestProjectService,
+  getSingleProjectService,
   updateProjectService,
 } from "./service";
 
@@ -19,6 +20,19 @@ export const getAllProject: RequestHandler = catchAsync(async (req, res) => {
   sendResponse(res, {
     status: 200,
     message: "Project retrive successfully!",
+    data,
+  });
+});
+
+// create getSingleProject controller
+export const getSingleProject: RequestHandler = catchAsync(async (req, res) => {
+  // get query params from req
+  const { id } = req.params;
+
+  const data = await getSingleProjectService(id)
+  sendResponse(res, {
+    status: 200,
+    message: "Project retrieve successfully!",
     data,
   });
 });

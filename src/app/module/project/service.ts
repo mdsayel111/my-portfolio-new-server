@@ -16,6 +16,14 @@ export const getAllProjectService = async (query: Record<string, unknown>) => {
   return data;
 };
 
+// create get single project service
+export const getSingleProjectService = async (id: string) => {
+  // find project
+  const data = await Project.findById(id);
+
+  return data;
+};
+
 // create get all leatest projects service
 export const getLeatestProjectService = async () => {
   // get data from DB
