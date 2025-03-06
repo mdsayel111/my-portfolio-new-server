@@ -5,7 +5,7 @@ import Project from "./model";
 // create get all project service
 export const getAllProjectService = async (query: Record<string, unknown>) => {
   // create query builder instance
-  const queryModel = new QueryBuilder(Project.find({isActive: true}), query);
+  const queryModel = new QueryBuilder(Project.find({ isActive: true }), query);
 
   // apply methods in queryModel
   queryModel.sort(["createAt"]);

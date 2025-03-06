@@ -1,10 +1,7 @@
 import { RequestHandler } from "express";
 import catchAsync from "../../../HOF/catch-async";
 import { sendResponse } from "../../utils/send-response";
-import {
-  getHeroService,
-  updateHeroService,
-} from "./service";
+import { getHeroService, updateHeroService } from "./service";
 
 // create getSingleHero controller
 export const getHero: RequestHandler = catchAsync(async (req, res) => {

@@ -17,7 +17,11 @@ const auth = () => {
     }
 
     // otherwise send user details
-    sendResponse(res, { status: 401, message: "Unauthorized!", data: { email: decoded.email, role: decoded.role } })
+    sendResponse(res, {
+      status: 401,
+      message: "Unauthorized!",
+      data: { email: decoded.email, role: decoded.role },
+    });
   });
 
   return middleware;
