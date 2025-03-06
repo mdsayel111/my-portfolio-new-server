@@ -1,6 +1,7 @@
 import catchAsync from "../../HOF/catch-async";
 import User from "../module/auth/model";
 import { verifyToken } from "../utils/jwt";
+import { sendResponse } from "../utils/send-response";
 
 const auth = () => {
   // create auth middleware
@@ -16,8 +17,7 @@ const auth = () => {
     }
 
     // otherwise send user details
-    // sendResponse(res, { status: 200, message: "User info retrive successfully!", data: { email: decoded.email, role: decoded.role } })
-    // res.send();
+    sendResponse(res, { status: 401, message: "Unauthorized!", data: { email: decoded.email, role: decoded.role } })
   });
 
   return middleware;

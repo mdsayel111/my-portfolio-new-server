@@ -10,7 +10,7 @@ const projectSchema = new Schema<TProject>(
     },
     imgLink: { type: String, required: [true, "Image link is required!"] },
     description: { type: String, required: [true, "Description is required!"] },
-    // gitLink: { type: String, required: [true, "Git is required!"] },
+    liveLink: { type: String, required: [true, "Live link is required!"] },
     // gitLink: { type: String, required: [true, "Git is required!"] },
     clientCodeLink: { type: String, required: [true, "Git is required!"] },
     serverCodeLink: {
