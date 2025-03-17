@@ -14,13 +14,16 @@ const animationTextSchema = new Schema<THeroAnimationText>(
     },
     isActive: {
       type: Boolean,
-      default: true
-    }
+      default: true,
+    },
   },
   { collection: "AnimationTextAnimationText", timestamps: true },
 );
 
 // create project model
-const AnimationText = model<THeroAnimationText>("AnimationTextAnimationText", animationTextSchema);
+const AnimationText = model<THeroAnimationText>(
+  "AnimationTextAnimationText",
+  animationTextSchema,
+);
 
 export default AnimationText;

@@ -10,7 +10,9 @@ export const getHeroAnimationTextService = async () => {
 };
 
 // create projects service
-export const createHeroAnimationTextService = async (animationTextData: THeroAnimationText) => {
+export const createHeroAnimationTextService = async (
+  animationTextData: THeroAnimationText,
+) => {
   // insert data into DB
   const data = await HeroAnimationText.create(animationTextData);
 
@@ -18,9 +20,16 @@ export const createHeroAnimationTextService = async (animationTextData: THeroAni
 };
 
 // update heroAnimationTexts service
-export const updateHeroAnimationTextService = async (id: string, heroAnimationTextData: THeroAnimationText) => {
+export const updateHeroAnimationTextService = async (
+  id: string,
+  heroAnimationTextData: THeroAnimationText,
+) => {
   // update data in DB
-  const data = await HeroAnimationText.findByIdAndUpdate(id, heroAnimationTextData, { new: true });
+  const data = await HeroAnimationText.findByIdAndUpdate(
+    id,
+    heroAnimationTextData,
+    { new: true },
+  );
 
   return data;
 };

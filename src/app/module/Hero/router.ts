@@ -6,7 +6,7 @@ import heroAnimationTextRouter from "./AnimationText/router";
 // create hero router
 const heroRouter = express.Router();
 
-heroRouter.use("/heroAnimationText", heroAnimationTextRouter)
+heroRouter.use("/heroAnimationText", heroAnimationTextRouter);
 
 // get all hero route
 heroRouter.get("/", getHero);
