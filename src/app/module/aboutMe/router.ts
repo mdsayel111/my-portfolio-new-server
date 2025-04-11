@@ -1,21 +1,15 @@
 import express from "express";
-import { getAboutMe, updateAboutMe } from "./controller";
 import auth from "../../middleware/auth";
-import AboutMe from "./model";
+import { getAboutMe, getSingleAboutMe, updateAboutMe } from "./controller";
 
 // create aboutMe router
 const aboutMeRouter = express.Router();
 
 // get all aboutMe route
 aboutMeRouter.get("/", getAboutMe);
-aboutMeRouter.post("/", async (req, res) => {
-  const data = await AboutMe.create(req.body);
-  res.status(200).send({
-    status: 200,
-    message: "AboutMe created successfully!",
-    data,
-  });
-});
+
+// get single aboutMe route
+aboutMeRouter.get("/:id", getSingleAboutMe);
 
 // update aboutMe route
 aboutMeRouter.patch("/:id", auth(), updateAboutMe);
