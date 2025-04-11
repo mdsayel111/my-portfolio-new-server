@@ -8,12 +8,12 @@ const aboutMeRouter = express.Router();
 
 // get all aboutMe route
 aboutMeRouter.get("/", getAboutMe);
-aboutMeRouter.post("/",async (req, res) => {
-    const data = await AboutMe.create(req.body)
+aboutMeRouter.post("/", async (req, res) => {
+  const data = await AboutMe.create(req.body);
   res.status(200).send({
     status: 200,
     message: "AboutMe created successfully!",
-    data
+    data,
   });
 });
 

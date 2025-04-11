@@ -9,7 +9,10 @@ export const getAboutMeService = async () => {
   return data;
 };
 // update AboutMe service
-export const updateAboutMeService = async (id: string, aboutMeData: TAboutMe) => {
+export const updateAboutMeService = async (
+  id: string,
+  aboutMeData: TAboutMe,
+) => {
   // update data in DB
   const data = await AboutMe.findByIdAndUpdate(id, aboutMeData, { new: true });
 
