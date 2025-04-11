@@ -1,8 +1,7 @@
 // create project type
-export type THero = {
+export type TAboutMe = {
   _id: string;
   title: string;
-  name: string;
   description: string;
   image: string;
 };

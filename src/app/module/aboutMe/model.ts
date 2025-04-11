@@ -1,21 +1,17 @@
 import { model, Schema } from "mongoose";
-import { THero } from "./interface";
+import { TAboutMe } from "./interface";
 
-// create hero schema
-const heroSchema = new Schema<THero>(
+// create aboutMe schema
+const aboutMeSchema = new Schema<TAboutMe>(
   {
-    name: {
-      type: String,
-      required: [true, "Name is required!"],
-    },
     title: { type: String, required: [true, "Title is required!"] },
     image: { type: String, required: [true, "Image is required!"] },
     description: { type: String, required: [true, "Description is required!"] },
   },
-  { collection: "Hero", timestamps: true },
+  { timestamps: true },
 );
 
 // create project model
-const Hero = model<THero>("Hero", heroSchema);
+const AboutMe = model<TAboutMe>("AboutMe", aboutMeSchema);
 
-export default Hero;
+export default AboutMe;

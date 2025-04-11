@@ -1,3 +1,4 @@
+import aboutMeRouter from "../module/aboutMe/router";
 import authRouter from "../module/auth/route";
 import heroRouter from "../module/Hero/router";
 import projectRouter from "../module/project/router";
@@ -12,4 +13,5 @@ export const routerObjects: TRouterObjects = [
   { path: "/resume", router: resumeRouter },
   { path: "/token", router: tokenRouter },
   { path: "/hero", router: heroRouter },
+  { path: "/aboutMe", router: aboutMeRouter },
 ];
