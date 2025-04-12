@@ -30,7 +30,9 @@ export const updateExperienceService = async (
   experienceData: TExperience,
 ) => {
   // update data in DB
-  const data = await Experience.findByIdAndUpdate(id, experienceData, { new: true });
+  const data = await Experience.findByIdAndUpdate(id, experienceData, {
+    new: true,
+  });
 
   return data;
 };

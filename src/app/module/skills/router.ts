@@ -1,6 +1,11 @@
 import express from "express";
 import auth from "../../middleware/auth";
-import { createExperience, getExperience, getSingleExperience, updateExperience } from "./controller";
+import {
+  createExperience,
+  getExperience,
+  getSingleExperience,
+  updateExperience,
+} from "./controller";
 
 // create experience router
 const experienceRouter = express.Router();

@@ -5,7 +5,7 @@ import {
   getExperienceService,
   getSingleExperienceService,
   updateExperienceService,
-  createExperienceService
+  createExperienceService,
 } from "./service";
 
 // create new experience controller
@@ -34,17 +34,19 @@ export const getExperience: RequestHandler = catchAsync(async (req, res) => {
 });
 
 // get single experience controller
-export const getSingleExperience: RequestHandler = catchAsync(async (req, res) => {
-  const { id } = req.params;
+export const getSingleExperience: RequestHandler = catchAsync(
+  async (req, res) => {
+    const { id } = req.params;
 
-  const data = await getSingleExperienceService(id);
+    const data = await getSingleExperienceService(id);
 
-  sendResponse(res, {
-    status: 200,
-    message: "About Me retrieve successfully!",
-    data,
-  });
-});
+    sendResponse(res, {
+      status: 200,
+      message: "About Me retrieve successfully!",
+      data,
+    });
+  },
+);
 
 // create updateExperience controller
 export const updateExperience: RequestHandler = catchAsync(async (req, res) => {
