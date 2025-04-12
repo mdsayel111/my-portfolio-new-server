@@ -24,8 +24,9 @@ export const createExperience: RequestHandler = catchAsync(async (req, res) => {
 // create getSingleExperience controller
 export const getExperience: RequestHandler = catchAsync(async (req, res) => {
   // get query params from req
+  const query = req.query;
 
-  const data = await getExperienceService();
+  const data = await getExperienceService(query);
   sendResponse(res, {
     status: 200,
     message: "About Me retrieve successfully!",
@@ -52,8 +53,10 @@ export const getSingleExperience: RequestHandler = catchAsync(
 export const updateExperience: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const experienceData = req.body;
+  const isDelete =
+  (!req.body.isActive && req.body.isActive === false) ? true : false;
 
-  const data = await updateExperienceService(id, experienceData);
+  const data = await updateExperienceService(id, experienceData, isDelete);
 
   sendResponse(res, {
     status: 200,

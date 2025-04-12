@@ -1,5 +1,6 @@
 import aboutMeRouter from "../module/aboutMe/router";
 import authRouter from "../module/auth/route";
+import educationRouter from "../module/education/router";
 import experienceRouter from "../module/Experience/router";
 import heroRouter from "../module/Hero/router";
 import projectRouter from "../module/project/router";
@@ -16,4 +17,5 @@ export const routerObjects: TRouterObjects = [
   { path: "/hero", router: heroRouter },
   { path: "/aboutMe", router: aboutMeRouter },
   { path: "/experience", router: experienceRouter },
+  { path: "/education", router: educationRouter },
 ];

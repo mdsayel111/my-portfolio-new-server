@@ -8,7 +8,7 @@ export const getAllProjectService = async (query: Record<string, unknown>) => {
   const queryModel = new QueryBuilder(Project.find({ isActive: true }), query);
 
   // apply methods in queryModel
-  queryModel.sort(["createAt"]);
+  queryModel.sort(["position"]);
 
   // get data
   const data = await queryModel.queryModel;
