@@ -21,17 +21,19 @@ export const getSocialIcon: RequestHandler = catchAsync(async (req, res) => {
 });
 
 // get single socialIcon controller
-export const getSingleSocialIcon: RequestHandler = catchAsync(async (req, res) => {
-  const { id } = req.params;
+export const getSingleSocialIcon: RequestHandler = catchAsync(
+  async (req, res) => {
+    const { id } = req.params;
 
-  const data = await getSingleSocialIconService(id);
+    const data = await getSingleSocialIconService(id);
 
-  sendResponse(res, {
-    status: 200,
-    message: "About Me retrieve successfully!",
-    data,
-  });
-});
+    sendResponse(res, {
+      status: 200,
+      message: "About Me retrieve successfully!",
+      data,
+    });
+  },
+);
 
 // create updateSocialIcon controller
 export const updateSocialIcon: RequestHandler = catchAsync(async (req, res) => {

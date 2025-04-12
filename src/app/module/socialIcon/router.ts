@@ -1,6 +1,11 @@
 import express from "express";
 import auth from "../../middleware/auth";
-import { getSocialIcon, getSingleSocialIcon, updateSocialIcon, createSocialIcon } from "./controller";
+import {
+  getSocialIcon,
+  getSingleSocialIcon,
+  updateSocialIcon,
+  createSocialIcon,
+} from "./controller";
 
 // create socialIcon router
 const socialIconRouter = express.Router();

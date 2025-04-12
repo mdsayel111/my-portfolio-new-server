@@ -25,7 +25,6 @@ export const getSkill: RequestHandler = catchAsync(async (req, res) => {
   // get query params from req
 
   const data = await getSkillService();
-  console.log(data);
   sendResponse(res, {
     status: 200,
     message: "About Me retrieve successfully!",

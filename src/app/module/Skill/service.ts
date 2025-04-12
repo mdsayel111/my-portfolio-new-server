@@ -16,10 +16,7 @@ export const getSkillService = async () => {
   return data;
 };
 // update Skill service
-export const updateSkillService = async (
-  id: string,
-  skillData: TSkill,
-) => {
+export const updateSkillService = async (id: string, skillData: TSkill) => {
   // update data in DB
   const data = await Skill.findByIdAndUpdate(id, skillData, { new: true });
 

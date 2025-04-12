@@ -1,6 +1,11 @@
 import express from "express";
 import auth from "../../middleware/auth";
-import { getSkill, getSingleSkill, updateSkill, createSkill } from "./controller";
+import {
+  getSkill,
+  getSingleSkill,
+  updateSkill,
+  createSkill,
+} from "./controller";
 
 // create skill router
 const skillRouter = express.Router();

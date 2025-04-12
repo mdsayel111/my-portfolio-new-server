@@ -28,7 +28,9 @@ export const updateSocialIconService = async (
     return data;
   }
   // update data in DB
-  const data = await SocialIcon.findByIdAndUpdate(id, socialIconData, { new: true });
+  const data = await SocialIcon.findByIdAndUpdate(id, socialIconData, {
+    new: true,
+  });
 
   return data;
 };
