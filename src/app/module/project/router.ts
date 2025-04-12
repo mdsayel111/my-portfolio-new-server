@@ -3,7 +3,7 @@ import {
   createProject,
   // deleteProject,
   getAllProject,
-  getLeatestProjects,
+  // getLeatestProjects,
   getSingleProject,
   updateProject,
 } from "./controller";
@@ -15,7 +15,7 @@ const projectRouter = express.Router();
 projectRouter.get("/", getAllProject);
 
 // get leatest project route
-projectRouter.get("/leatest-projects", getLeatestProjects);
+// projectRouter.get("/leatest-projects", getLeatestProjects);
 
 // create project route
 projectRouter.post("/", createProject);

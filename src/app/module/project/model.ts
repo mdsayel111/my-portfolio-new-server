@@ -18,11 +18,11 @@ const projectSchema = new Schema<TProject>(
       required: [true, "Live link is required!"],
     },
     isActive: { type: Boolean, default: true },
-    isVisible: { type: Boolean, default: true },
-    isLeatest: { type: Boolean, default: false },
+    // isVisible: { type: Boolean, default: true },
+    // isLeatest: { type: Boolean, default: false },
     position: { type: Number, default: 0 },
   },
-  { collection: "Projects", timestamps: true },
+  { timestamps: true },
 );
 
 // create project model

@@ -9,8 +9,8 @@ export type TProject = {
   imgLink: string;
   description: string;
   isActive: boolean;
-  isVisible: boolean;
-  isLeatest: boolean;
+  // isVisible: boolean;
+  // isLeatest: boolean;
   position: number;
   createdAt: Date;
   updatedAt: Date;

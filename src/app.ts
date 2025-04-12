@@ -2,8 +2,8 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import express, { Express, Request, Response } from "express";
 import globalErrorHandleMiddleware from "./app/middleware/global-error-handler";
-import mainRouter from "./app/router";
 import Hero from "./app/module/Hero/model";
+import mainRouter from "./app/router";
 import { sendResponse } from "./app/utils/send-response";
 
 // create app
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // removeFields(["gitLink", "image"])
-// addFields({clientCodeLink: "", serverCodeLink: ""})
+// addFields({isActive: true})
 
 // add public route
 app.get("/api/public", async (req: Request, res: Response) => {

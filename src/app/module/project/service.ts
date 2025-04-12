@@ -25,12 +25,12 @@ export const getSingleProjectService = async (id: string) => {
 };
 
 // create get all leatest projects service
-export const getLeatestProjectService = async () => {
-  // get data from DB
-  const data = Project.find({ isLeatest: true }).sort({ position: "asc" });
+// export const getLeatestProjectService = async () => {
+//   // get data from DB
+//   const data = Project.find({ isLeatest: true }).sort({ position: "asc" });
 
-  return data;
-};
+//   return data;
+// };
 
 // create projects service
 export const createProjectService = async (projectData: TProject) => {
