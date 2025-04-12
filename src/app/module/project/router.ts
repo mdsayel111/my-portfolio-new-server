@@ -1,9 +1,10 @@
 import express from "express";
 import {
   createProject,
-  deleteProject,
+  // deleteProject,
   getAllProject,
   getLeatestProjects,
+  getSingleProject,
   updateProject,
 } from "./controller";
 
@@ -20,12 +21,12 @@ projectRouter.get("/leatest-projects", getLeatestProjects);
 projectRouter.post("/", createProject);
 
 // get single project route
-projectRouter.get("/:id", updateProject);
+projectRouter.get("/:id", getSingleProject);
 
 // update project route
 projectRouter.patch("/:id", updateProject);
 
 // delete project route
-projectRouter.delete("/:id", deleteProject);
+// projectRouter.delete("/:id", deleteProject);
 
 export default projectRouter;

@@ -67,25 +67,27 @@ export const createProject: RequestHandler = catchAsync(async (req, res) => {
 export const updateProject: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const projectData = req.body;
+  const isDelete = req.body.isActive && req.body.isActive === false ? true : false;
+  console.log(isDelete)
 
-  const data = await updateProjectService(id, projectData);
+  const data = await updateProjectService(id, projectData, isDelete);
 
   sendResponse(res, {
     status: 200,
     message: "Project updated successfully!",
-    data,
+    data: data,
   });
 });
 
 // create deleteProject controller
-export const deleteProject: RequestHandler = catchAsync(async (req, res) => {
-  const { id } = req.params;
+// export const deleteProject: RequestHandler = catchAsync(async (req, res) => {
+//   const { id } = req.params;
 
-  const data = await deleteProjectService(id);
+//   const data = await deleteProjectService(id);
 
-  sendResponse(res, {
-    status: 200,
-    message: "Project deleted successfully!",
-    data,
-  });
-});
+//   sendResponse(res, {
+//     status: 200,
+//     message: "Project deleted successfully!",
+//     data,
+//   });
+// });

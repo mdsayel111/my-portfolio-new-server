@@ -8,8 +8,10 @@ const experienceSchema = new Schema<TExperience>(
     position: { type: String, required: [true, "Image is required!"] },
     from: { type: String, required: [true, "Description is required!"] },
     to: { type: String, required: [true, "Description is required!"] },
+    isActive: { type: Boolean, default: true },
   },
   { timestamps: true },
+  
 );
 
 // create project model

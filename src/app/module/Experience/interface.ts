@@ -5,4 +5,5 @@ export type TExperience = {
   position: string;
   from: string;
   to: string;
+  isActive: boolean
 };

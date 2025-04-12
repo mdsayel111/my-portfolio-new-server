@@ -1,3 +1,4 @@
+import { CLIENT_RENEG_LIMIT } from "tls";
 import { QueryBuilder } from "../../query-builder";
 import { TProject } from "./interface";
 import Project from "./model";
@@ -20,6 +21,7 @@ export const getAllProjectService = async (query: Record<string, unknown>) => {
 export const getSingleProjectService = async (id: string) => {
   // find project
   const data = await Project.findById(id);
+  console.log(data);
 
   return data;
 };
@@ -44,7 +46,14 @@ export const createProjectService = async (projectData: TProject) => {
 export const updateProjectService = async (
   id: string,
   projectData: TProject,
+  isDelete: boolean
 ) => {
+  if (isDelete) {
+    // delete data in DB
+    const data = await Project.findByIdAndDelete(id);
+
+    return data;
+  }
   // update data in DB
   const data = await Project.findByIdAndUpdate(id, projectData, { new: true });
 
