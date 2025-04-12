@@ -20,8 +20,11 @@ export const getSingleExperienceService = async (id: string) => {
 // create get all experience service
 export const getExperienceService = async (query: Record<string, unknown>) => {
   // get data
-  const queryModel = new QueryBuilder(Experience.find({ isActive: true }), query);
-  
+  const queryModel = new QueryBuilder(
+    Experience.find({ isActive: true }),
+    query,
+  );
+
   // apply methods in queryModel
   queryModel.sort(["createAt"]);
 
@@ -35,7 +38,7 @@ export const getExperienceService = async (query: Record<string, unknown>) => {
 export const updateExperienceService = async (
   id: string,
   experienceData: TExperience,
-  idDelete: boolean
+  idDelete: boolean,
 ) => {
   // delete data in DB
   if (idDelete) {

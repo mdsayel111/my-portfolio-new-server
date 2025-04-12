@@ -20,8 +20,11 @@ export const getSingleEducationService = async (id: string) => {
 // create get all education service
 export const getEducationService = async (query: Record<string, unknown>) => {
   // get data
-  const queryModel = new QueryBuilder(Education.find({ isActive: true }), query);
-  
+  const queryModel = new QueryBuilder(
+    Education.find({ isActive: true }),
+    query,
+  );
+
   // apply methods in queryModel
   queryModel.sort(["createAt"]);
 
@@ -35,7 +38,7 @@ export const getEducationService = async (query: Record<string, unknown>) => {
 export const updateEducationService = async (
   id: string,
   educationData: TEducation,
-  idDelete: boolean
+  idDelete: boolean,
 ) => {
   // delete data in DB
   if (idDelete) {

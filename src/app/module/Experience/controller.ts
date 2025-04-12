@@ -54,7 +54,7 @@ export const updateExperience: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const experienceData = req.body;
   const isDelete =
-  (!req.body.isActive && req.body.isActive === false) ? true : false;
+    !req.body.isActive && req.body.isActive === false ? true : false;
 
   const data = await updateExperienceService(id, experienceData, isDelete);
 

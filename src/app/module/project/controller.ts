@@ -68,7 +68,7 @@ export const updateProject: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const projectData = req.body;
   const isDelete =
-  (!req.body.isActive && req.body.isActive === false) ? true : false;
+    !req.body.isActive && req.body.isActive === false ? true : false;
 
   const data = await updateProjectService(id, projectData, isDelete);
 
