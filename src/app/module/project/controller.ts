@@ -3,7 +3,7 @@ import catchAsync from "../../../HOF/catch-async";
 import { sendResponse } from "../../utils/send-response";
 import {
   createProjectService,
-  deleteProjectService,
+  // deleteProjectService,
   getAllProjectService,
   getLeatestProjectService,
   getSingleProjectService,
@@ -67,8 +67,9 @@ export const createProject: RequestHandler = catchAsync(async (req, res) => {
 export const updateProject: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
   const projectData = req.body;
-  const isDelete = req.body.isActive && req.body.isActive === false ? true : false;
-  console.log(isDelete)
+  const isDelete =
+    req.body.isActive && req.body.isActive === false ? true : false;
+  // console.log(isDelete)
 
   const data = await updateProjectService(id, projectData, isDelete);
 

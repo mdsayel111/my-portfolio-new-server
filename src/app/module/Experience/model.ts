@@ -11,7 +11,6 @@ const experienceSchema = new Schema<TExperience>(
     isActive: { type: Boolean, default: true },
   },
   { timestamps: true },
-  
 );
 
 // create project model
