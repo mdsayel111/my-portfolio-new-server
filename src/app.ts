@@ -46,7 +46,15 @@ app.get("/api/public", async (req: Request, res: Response) => {
   const skills = await Skill.find({ isActive: true });
   const projects = await Project.find({ isActive: true });
   const contact = await Contact.findOne();
-  const data = { banner, aboutMe, experiences, eductations, skills, projects, contact }
+  const data = {
+    banner,
+    aboutMe,
+    experiences,
+    eductations,
+    skills,
+    projects,
+    contact,
+  };
   sendResponse(res, {
     data,
     status: 200,
