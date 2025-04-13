@@ -2,30 +2,30 @@ import { RequestHandler } from "express";
 import catchAsync from "../../../HOF/catch-async";
 import { sendResponse } from "../../utils/send-response";
 import {
-  getExperienceService,
-  getSingleExperienceService,
-  updateExperienceService,
-  createExperienceService,
+  getSkillService,
+  getSingleSkillService,
+  updateSkillService,
+  createSkillService,
 } from "./service";
 
-// create new experience controller
-export const createExperience: RequestHandler = catchAsync(async (req, res) => {
-  const experienceData = req.body;
+// create new skill controller
+export const createSkill: RequestHandler = catchAsync(async (req, res) => {
+  const skillData = req.body;
 
-  const data = await createExperienceService(experienceData);
+  const data = await createSkillService(skillData);
 
   sendResponse(res, {
     status: 200,
-    message: "Experience created successfully!",
+    message: "Skill created successfully!",
     data,
   });
 });
 
-// create getSingleExperience controller
-export const getExperience: RequestHandler = catchAsync(async (req, res) => {
+// create getSingleSkill controller
+export const getSkill: RequestHandler = catchAsync(async (req, res) => {
   // get query params from req
 
-  const data = await getExperienceService();
+  const data = await getSkillService();
   sendResponse(res, {
     status: 200,
     message: "About Me retrieve successfully!",
@@ -33,12 +33,12 @@ export const getExperience: RequestHandler = catchAsync(async (req, res) => {
   });
 });
 
-// get single experience controller
-export const getSingleExperience: RequestHandler = catchAsync(
+// get single skill controller
+export const getSingleSkill: RequestHandler = catchAsync(
   async (req, res) => {
     const { id } = req.params;
 
-    const data = await getSingleExperienceService(id);
+    const data = await getSingleSkillService(id);
 
     sendResponse(res, {
       status: 200,
@@ -48,16 +48,16 @@ export const getSingleExperience: RequestHandler = catchAsync(
   },
 );
 
-// create updateExperience controller
-export const updateExperience: RequestHandler = catchAsync(async (req, res) => {
+// create updateSkill controller
+export const updateSkill: RequestHandler = catchAsync(async (req, res) => {
   const { id } = req.params;
-  const experienceData = req.body;
+  const skillData = req.body;
 
-  const data = await updateExperienceService(id, experienceData);
+  const data = await updateSkillService(id, skillData);
 
   sendResponse(res, {
     status: 200,
-    message: "Experience updated successfully!",
+    message: "Skill updated successfully!",
     data,
   });
 });

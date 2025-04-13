@@ -1,25 +1,25 @@
 import express from "express";
 import auth from "../../middleware/auth";
 import {
-  createExperience,
-  getExperience,
-  getSingleExperience,
-  updateExperience,
+  createSkill,
+  getSkill,
+  getSingleSkill,
+  updateSkill,
 } from "./controller";
 
-// create experience router
-const experienceRouter = express.Router();
+// create skill router
+const skillRouter = express.Router();
 
-// get all experience route
-experienceRouter.get("/", getExperience);
+// get all skill route
+skillRouter.get("/", getSkill);
 
-// create new experience route
-experienceRouter.post("/", auth(), createExperience);
+// create new skill route
+skillRouter.post("/", auth(), createSkill);
 
-// get single experience route
-experienceRouter.get("/:id", getSingleExperience);
+// get single skill route
+skillRouter.get("/:id", getSingleSkill);
 
-// update experience route
-experienceRouter.patch("/:id", auth(), updateExperience);
+// update skill route
+skillRouter.patch("/:id", auth(), updateSkill);
 
-export default experienceRouter;
+export default skillRouter;

@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import TResume from "./interface";
+import TResume from "../resume/interface";
 
 // create resume schema
 const resumeSchema = new Schema<TResume>(
