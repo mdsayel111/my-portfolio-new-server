@@ -10,7 +10,12 @@ const auth = () => {
     const decoded = verifyToken(token);
 
     // Ensure decoded is an object (JwtPayload) and has email and role
-    if (decoded && typeof decoded === "object" && "email" in decoded && "role" in decoded) {
+    if (
+      decoded &&
+      typeof decoded === "object" &&
+      "email" in decoded &&
+      "role" in decoded
+    ) {
       const { email } = decoded as JwtPayload & { email: string; role: string };
       const userInfoFromDB = await User.findOne({ email });
       if (userInfoFromDB?.role === "admin") return next();
@@ -20,8 +25,14 @@ const auth = () => {
       status: 401,
       message: "Unauthorized!",
       data: {
-        email: typeof decoded === "object" && "email" in decoded ? decoded.email : null,
-        role: typeof decoded === "object" && "role" in decoded ? decoded.role : null,
+        email:
+          typeof decoded === "object" && "email" in decoded
+            ? decoded.email
+            : null,
+        role:
+          typeof decoded === "object" && "role" in decoded
+            ? decoded.role
+            : null,
       },
     });
   });

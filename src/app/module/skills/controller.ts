@@ -34,19 +34,17 @@ export const getSkill: RequestHandler = catchAsync(async (req, res) => {
 });
 
 // get single skill controller
-export const getSingleSkill: RequestHandler = catchAsync(
-  async (req, res) => {
-    const { id } = req.params;
+export const getSingleSkill: RequestHandler = catchAsync(async (req, res) => {
+  const { id } = req.params;
 
-    const data = await getSingleSkillService(id);
+  const data = await getSingleSkillService(id);
 
-    sendResponse(res, {
-      status: 200,
-      message: "About Me retrieve successfully!",
-      data,
-    });
-  },
-);
+  sendResponse(res, {
+    status: 200,
+    message: "About Me retrieve successfully!",
+    data,
+  });
+});
 
 // create updateSkill controller
 export const updateSkill: RequestHandler = catchAsync(async (req, res) => {
