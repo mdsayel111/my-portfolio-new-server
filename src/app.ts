@@ -23,8 +23,7 @@ app.use(
       "http://localhost:5173",
       "https://sayel-portfolio.surge.sh",
       "http://sayel-portfolio-admin.surge.sh",
-      "https://sayel-portfolio-admin-fb7rr3vnp-sayels-projects-0879e173.vercel.app",
-      "https://sayel-portfolio-admin-mdsayel111-sayels-projects-0879e173.vercel.app"
+      "https://my-portfolio-admin-ochre.vercel.app/",
     ],
     credentials: true,
   }),
