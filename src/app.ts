@@ -14,6 +14,7 @@ import Contact from "./app/module/contact/model";
 
 // create app
 const app: Express = express();
+console.log("first")
 
 // cors config
 app.use(
